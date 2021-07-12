@@ -17,7 +17,6 @@
         }
 
         public function addAction(){
-            array_push($testCount,'B');
             $content = $_POST['content'];
             $category_id = $_POST['category_id'];
 

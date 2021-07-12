@@ -2,6 +2,7 @@
 ini_set('display_errors', "On");
 require_once('./route/reqUrl.php');
 require_once('./controller/TaskController.php');
+require_once('./controller/UserController.php');
 
 $getUrl = new getUrl();
 $url = $getUrl->getPath();
@@ -15,7 +16,10 @@ switch($url){
     case '/task/add':
         $taskController = new TaskController();
         $taskController->addAction();
-        array_push($testCount,'A');
+        break;
+    case '/user/add':
+        $userController = new UserController();
+        $userController->add();
         break;
 }
 

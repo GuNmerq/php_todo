@@ -21,7 +21,6 @@ class TaskModel extends Model{
     }
 
     public function add($content,$category_id){
-        array_push($testCount,'C');
         $data = $this->pdo->prepare("INSERT INTO tasks (content,category_id) values(:content,:category_id)");
         $data->bindValue(':content',$content,PDO::PARAM_STR);
         $data->bindValue(':category_id',$category_id,PDO::PARAM_INT);
