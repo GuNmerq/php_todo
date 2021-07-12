@@ -19,7 +19,7 @@ switch($url){
         break;
     case '/user/add':
         $userController = new UserController();
-        $userController->add();
+        $userController->addAction();
         break;
 }
 

@@ -20,9 +20,6 @@
             $content = $_POST['content'];
             $category_id = $_POST['category_id'];
 
-            $taskModel = new TaskModel();
-            $taskModel->add($content,$category_id);
-
             $errors = $this->addValidation($content);
 
             if (count($errors) === 0) {
@@ -39,7 +36,7 @@
 
         $errors = [];
         if (empty($content)){
-            $errors['content'] = '本文がありません。<br>';
+            $errors['content'] = 'タスクが設定されていません。<br>';
         }
         return $errors;
     }
