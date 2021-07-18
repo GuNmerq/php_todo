@@ -1,10 +1,13 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 abstract class Controller
 {
-    function __construct(){
-        if(empty($_SESSION['user'])) {
-            header("Location: /PHP_TODO/login");
+    public function __construct()
+    {
+        if (empty($_SESSION['id'])) {
+            header("Location: /PHP_TODO/user/login");
             exit;
         }
     }
